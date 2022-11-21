@@ -1,0 +1,429 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    color: white;
+	font-family: Roboto, sans-serif;   
+    
+  }
+  #wrapper{
+    overflow: hidden;
+    margin-left:auto;
+    margin-right:auto;
+    width:auto;
+  }
+  
+  header{
+    color: white;
+    background-color: #002157;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 40px 10px 10px;
+  }
+ /*.search {
+    display: flex;
+	align-items: center;
+  }
+  header input {
+	width: 740px;
+	padding: 10px;
+	font-size: 17px;
+	border-radius: 0px 20px 20px 0px;
+	border: none;
+	outline: none;
+	color: black;
+  }
+  header .search i{
+    color: black;
+    padding: 10px 17px;
+	background: white;
+	border-radius: 20px 0px 0px 20px;
+    border: 24px;
+    border-color: white;
+    margin: 0px;
+  }*/
+ .area{
+    margin-left: 42px;
+ }
+  .box{
+	width: 750px;
+    height: 20px;
+	background-color: white;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+.box > i {
+	font-size: 20px;
+	color: #003C9C;
+}
+
+.box > input{
+	flex: 1;
+	height: 40px;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	padding-left: 10px;
+    color: black;
+
+}
+.wishlist button{
+    background-color: #002157;
+    border: none;
+}
+
+.wishlist button:hover{
+    transform: scale(1.25);
+}
+.secondContainer{
+    background-color: white;
+    padding: 6px 15px;
+    box-shadow: 0px 1px 4px rgba(41, 45, 55, 0.16);;
+    }
+.categories{
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ .secondContainer ul li a{
+    color: #080E19;
+    font-size: 18px;
+    text-decoration: none;
+}
+.secondContainer ul li a:hover{
+    color: #0047b9;
+}
+
+.main{
+    color: black;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+
+}
+.containerOne{
+    color: black;
+    width: 50%;
+    margin-left: 115px;
+    margin-top: 24px;
+}
+.hyperlink a{
+    color: #A1A3A8;
+    font-size: 12px;
+}
+.titleCard{
+    background-color: white;
+	display: flex;
+	justify-content: space-between;
+    margin-top: 24px;
+}
+.heart i{
+    color: black;
+    font-size: 18px;
+    cursor: pointer
+
+}
+
+.banner h3{
+    color: #292D37;
+}
+.heart  i:hover{
+    color: red;
+}
+
+.banner h4{
+    color: #080E19;
+    margin-top: 10px;
+}
+.banner span{
+    color: #080E19;
+    margin-top: 10px;
+}
+.subpics{
+    position: absolute;
+    top: 60%;
+    left:140px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    
+    
+    
+
+}
+.subpics img{
+    border: none;
+    width: 70px;
+    margin: 18px 0px;
+    cursor: pointer;
+    
+    
+
+}
+.subpics img:hover{
+    transform: translateY(-5px);
+}
+.selected{
+    box-shadow:0px 12px 22px 1px #333;
+}
+.mainpics img{
+    width: 280px;
+    height:400px;
+    transition: all 0.5s ease;
+    margin-left: 220px;
+    margin-top: 50px;
+}
+.heart  i:focus{
+    color: red;
+}
+.containertwo{
+    color: black;
+    padding-top: 24px;
+    padding-left: 24px;
+    width: 35%;
+}
+.containertwo h2{
+    color: black;
+    margin-top: 35px;
+    margin-left: 15px;
+}
+.containertwo .del{
+    color: #292D37; 
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+.containertwo .name{
+    color: #003C9C;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.containertwo .time{
+    color: #292D37;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.containertwo .sell{
+    color: #292D37;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.containertwo .retail{
+    color: #003C9C;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.containertwo .rate{
+    color: #292D37;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.containertwo .qty{
+    color: #292D37;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+
+
+.qtyndButton{
+    color: black;
+    margin-top: 15px;
+
+}
+.qtyndButton .quan input{
+    color: black;
+    font-size: 16px;
+    width: 70px;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: #EEF5FF;
+    border-radius: 5px;
+    
+}
+.qtyndButton button{
+    color: #003C9C;
+    font-size: 16px;
+    width: 120px;
+    height: 30px;
+    background-color: #EEF5FF;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: #EEF5FF;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.qtyndButton button:hover
+{
+    background-color: #d6e6fb;
+}
+
+.qtyndButton button:active{
+    background-color: #d6e6fb;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  }
+
+.containertwo .listhead{
+    color: #292D37;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.containertwo ul{
+    list-style-type: disc;
+    color: black;
+}
+.containertwo ul li{
+    margin-left: 30px;
+    margin-top: 15px;
+    color: #292D37;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 15px;
+    text-decoration: none;
+}
+.containerthree{
+    color: black;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.tab {
+    color: black;
+    overflow: hidden;
+    background-color: white;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: white;
+  }
+  .tab button {
+    color: black;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  .tab button:hover {
+    text-decoration: underline black solid 3px;
+    text-underline-offset: 8px;
+  }
+  .tab button.active {
+    text-decoration: underline black solid 5px;
+    text-underline-offset: 8px;
+  }
+  .tabcontent {
+    color: black;
+    font-size: 14px;
+    display: none;
+    margin-top: 12px;
+    margin-right: 75px;
+    padding: 6px 10px;
+    border: 1px solid white;
+    border-top: none;
+  }
+  .card{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 80px;
+    margin-left: 115px;
+    padding-right: 50px;
+    height: 400px;
+    width: 90%;
+    overflow: hidden;
+  }
+  .containerfour{
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+
+  }
+  .cardbutton{
+    color: black;
+    margin-top: 30px;
+  }
+  .cardbutton .kaun input{
+    color: black;
+    font-size: 16px;
+    width: 70px;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: #EEF5FF;
+    border-radius: 5px;
+    
+  }
+  
+  .containerfour .img-gallery img{
+    margin-left: 50Px;
+  }
+
+  .heartcard i
+{
+    font-size: 18px;
+    color: #292D37;
+    cursor: pointer;
+ }
+
+.heartcard i:hover{
+    color: red;
+}
+
+
+
+.cardbutton .add
+{
+    color: #003C9C;
+    font-size: 16px;
+    width: 120px;
+    height: 30px;
+    background-color: #EEF5FF;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: #EEF5FF;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.cardbutton .add:hover
+  {
+    background-color: #d6e6fb;
+  }
+.cardbutton .add:active
+  {
+  background-color: #d6e6fb;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  }
+  .subpics img:active{
+    border: solid orange;
+  }
+.fa-heart {
+    color: red;
+}
