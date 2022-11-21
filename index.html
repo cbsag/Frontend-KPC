@@ -1,109 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Display</title>
+        <link rel="icon" type="image/x-icon" href="https://kissflow.com/hubfs/Logo-Verticle-Light.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<div id="wrapper">
+    <body>
+        <script>
+            
+                function imageupdate(element)
+                {
+                    bhu = element.getAttribute('src');
+                    document.querySelector('.image').src = bhu;
+                    //console.log("hi kika");
+                    addBorderAroundImage(element);
+                }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-</head>
+                function openCity(evt, param) 
+                {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(param).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
 
-<body>
-  <nav>
-    <div class="left dflex">
-      <div class="item">
-        <p><i class="fa fa-map-marker me"></i>Delivery Location,</p>
-        <h5>&nbsp;&nbsp;&nbsp;Pudupakam 603103  </h5>
-      </div>
-    </div>
-    <div class="searchBox dflex">
-      <div class="box">
-        <div class="dflex">
-          <button type="submit" class="search">
-            <i class="fa fa-search"></i>
-          </button>
-          <input type="text"/>
+                function changeHeartColor(element)
+                {
+                    const heart = document.getElementById(element);
+                    console.log("inside changeHeartColor");
+                    if(heart.classList.contains("liked")){
+                        console.log("already liked, so unliking");
+                        heart.innerHTML='<i class="fa fa-heart-o" onClick="changeHeartColor(this.parentElement.getAttribute(\'id\'))"></i>';
+                        //heart.setAttribute("onClick","changeHeartColor("")");
+                        heart.classList.remove("liked");
+                    }else{
+                        console.log("going to like");
+                        heart.innerHTML='<i style= "color:red" class="fa fa-heart" onClick="changeHeartColor(this.parentElement.getAttribute(\'id\'))"></i>';
+                        heart.classList.add("liked");
+                    }
+                }
+
+                function addBorderAroundImage(img)
+                {
+                    console.log('Inside addBorderAroundImage');
+                    const alreadySelected = document.querySelector('.selected');
+                    if(alreadySelected != null)
+                    alreadySelected.classList.remove('selected');
+                    console.log('done removing border from previous img');
+                    img.classList.add('selected');
+                }
+                
+            </script>
+
+        <div class="container">
+            <header>
+                <div class="darkestBlue">
+                     <i style="font-size: 24px;margin-left: 40px;" class = "fa fa-map-marker me"></i>
+                     <span>Delivery location</span>
+                     <p class="area">Pudupakam 603103</p>
+                </div>
+                <div class="box">
+                    <i class="fa fa-search" aria-hidden="true"></i>      
+                    <input type="text" plaaceholder="search" name="">
+                
+                </div>
+                <div class="wishlist">
+                    <a href="#"><button style="font-size:24px"><i class="fa fa-heart-o"></i> Wishlist</button></a>
+                </div>
+                <div class="wishlist">
+                    <a href="#"><button style="font-size:24px"><i class="fa fa-shopping-cart"></i> My cart</button></a>
+                </div>
+            </header>
         </div>
-      </div>
+
+            <div class = "secondContainer">
+                <ul class = "categories">
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Mobiles</a></li>
+                    <li><a href="#">Stationaries</a></li>
+                    <li><a href="#">Chemicals</a></li>
+                    <li><a href="#">Gifts</a></li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">More</a></li>
+                </ul>
+            </div>
+        <div class="main">
+            <div class="containerOne">
+                <div class="hyperlink">
+                  <a href="#">home/mobile/apple/iphone13</a>
+                </div>
+                <div class="titleCard">
+                    <div class="banner">
+                        <h3>File folder, 1/3 Cut Tab, Letter Size, Manila, 250/Box</h3>
+                        <h3>(221689/TR56673)</h3>
+                        <span>SKU: 1234567890</span>
+                        <span style ="color: orange; margin-left: 8px;" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span>4.1 Ratings</span>
+                    </div>
+                    <div class="heart">
+                        <span id="he"><i class="fa fa-heart-o" onclick="changeHeartColor(this.parentElement.getAttribute('id'))"></i></span>
+                    </div>
+                </div>
+                <div class="mainpics">
+                    <img class="image" src="images/pngwing 6.png" alt="pic">
+                </div>
+
+                <div id ="testing" class="subpics">
+                    <img src="images/pngwing 6.png" onclick="imageupdate(this)" onload="imageupdate(this)">
+                    <img src="images/pngwing 2.png" onclick="imageupdate(this)">
+                    <img src="images/pngwing 6.png" onclick="imageupdate(this)">
+                </div>
+                
+            </div>
+            <div class="containertwo">
+                <h2 style="color: #292D37">$800 USD</h2>
+                <p style="font-size: 5px;">...</p>
+                <span style="color: #292D37; margin-left: 15px">UOM: 100/box</span><span style="color: black; margin-left: 10px">$8/item</span>
+                <p class="del">Delivery to</p>
+                <p class="name">Pudupakkam 603103</p>
+                <p class="time">Delivery time: 15days (Expected delivery: 01/01/2023</p>
+                <p class="sell">Seller</p>
+                <span class="retail">Appario Retail private limited</span><span class="rate">(3.2 rating)</span>
+                <p class="qty">Quantity</p>
+                <div class="qtyndButton">
+                    <span style="color: black; margin-left: 15px" class="quan"><input type="number" id="quantity" name="quantity" min="1" max="5" pattern="[1-5]" color="black"></span>
+                    <span style="color: black; margin-left: 10px" class="butt"><button>Add to cart</button></span>   
+                </div>
+                <p style="color: #292D37; margin-left: 15px; margin-top: 35px;">Highlights</p>
+                <ul class="points">
+                    <li>Comes in manila colour and is made of 11pt. Paper stock for durability.</li>
+                    <li>Three 1/3 cut assorted position top tabs allow for ample space for labelling to keep your files organaized.</li>
+                    <li>Letter size folder easily holds important files.</li>
+                </ul>
+            </div>
+        </div>
+            
+                
+            
+            <div class="containerthree">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'About this item')">About this item</button>
+                    <button class="tablinks" onclick="openCity(event, 'Specifications')">Specifications</button>
+                    <button class="tablinks" onclick="openCity(event, 'Ratings')">Ratings</button>
+                </div>
+                  <div id="About this item" class="tabcontent">
+                    <h4 style="color: black; margin-left: 5px;">About this item</h4>
+                    <p style="color: #080E19; margin-left: 5px; margin-top: 10px; font-size: 14px; text-align: justify; text-justify: inter-word; text-indent: 50px; line-height: 1.2;">Create an efficient filling systems. Three seperate tab positions. Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.</p>
+                    <ul style ="list-style-type: disc; color: black">
+                        <li style="color: #080E19; text-align: justify; text-justify: inter-word; font-size: 14px; text-decoration: none; margin-top: 13px; margin-left: 18px;">Comes in manila colour and is made of 11pt. Paper stock for durability.</li>
+                        <li style="color: #080E19; text-align: justify; text-justify: inter-word; font-size: 14px; text-decoration: none; margin-top: 10px; margin-left: 18px;">Three 1/3 cut assorted position top tabs allow for ample space for labelling to keep your files organaized.</li>
+                        <li style="color: #080E19; text-align: justify; text-justify: inter-word; font-size: 14px; text-decoration: none; margin-top: 10px; margin-left: 18px;">Letter size folder easily holds important files.</li>
+                    </ul>
+                   </div>
+                 <div id="Specifications" class="tabcontent">
+                    <h4 style="color: #080E19; margin-left: 5px;">Specifications</h4>
+                    <p style="color: #080E19; margin-left: 5px; margin-top: 10px; font-size: 14px; text-indent: 30px;">Terinju vanga poriya, vedika dhan ehe paka vandha, pathutu poa.</p> 
+                </div>
+                 <div id="Ratings" class="tabcontent">
+                    <h4 style="color: #080E19; margin-left: 5px;">Ratings</h4>
+                    <p style="color: #080E19; margin-left: 5px; font-size: 14px; margin-top: 10px; text-indent: 20px;">Beta enga ma kudukuranga elam masa sambalam dhan.</p>
+                </div>
+            </div>
+    
+        <div class="card">
+            <div class="containerfour">
+                <div class ="img-gallery">
+                    <div>
+                        <img src="images/pngwing 6.png">
+                        <p>...</p>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <h5 style="color: black; margin-top: 10px;">Carder Mesh Black Fabric Computer</h5>
+                        <p style="font-size: 8px;">...</p>
+                        <span style="color: black; font-size: 16px;">$ 8000.00</span><span style="color: #8092AB; margin-left: 8px; font-size:12px;"><s style="color: #8092AB;">$ 10000.00</s></span>
+                        <p style="color: black; margin-top: 8px; font-size: 12px;">1 each</p>
+                        <div class="cardbutton">
+                            <span style="color: black;" class="kaun"><input type="number" id="quantity" name="quantity" min="1" max="5" color="black"></span>
+                            <span style="color: black; margin-left: 8px;" class="atoc"><button class="add">Add to cart</button></span>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <div class="heartcard">
+                    <span id="heone"><i class="fa fa-heart-o" onclick="changeHeartColor(this.parentElement.getAttribute('id'))"></i></span>
+                </div>
+            </div>
+            <div class="containerfour">
+                <div class ="img-gallery">
+                    <div>
+                        <img src="images/pngwing 6.png">
+                        <p>...</p>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <h5 style="color: black; margin-top: 10px;">Carder Mesh Black Fabric Computer</h5>
+                        <p style="font-size: 8px;">...</p>
+                        <span style="color: black; font-size: 16px">$ 8000.00</span><span style="color: #8092AB; margin-left:8px; font-size:12px;"><s style="color: #8092AB;">$ 10000.00</s></span>
+                        <p style="color: black; margin-top:10px; font-size: 12px;">1 each</p>
+                        <div class="cardbutton">
+                            <span style="color: black;" class="kaun"><input type="number" id="quantity" name="quantity" min="1" max="5" color="black"></span>
+                            <span style="color: black; margin-left: 8px;" class="atoc"><button class="add">Add to cart</button></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="heartcard">
+                    <span id="hetwo"><i class="fa fa-heart-o" onclick="changeHeartColor(this.parentElement.getAttribute('id'))"></i></span>
+                </div>
+            </div>
+            <div class="containerfour">
+                <div class ="img-gallery">
+                    <div>
+                        <img src="images/pngwing 6.png">
+                        <p>...</p>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <h5 style="color: black; margin-top: 10px;">Carder Mesh Black Fabric Computer</h5>
+                        <p style="font-size: 8px;">...</p>
+                        <span style="color: black; font-size: 16px">$ 8000.00</span><span style="color: #8092AB; margin-left:8px; font-size:12px;"><s style="color: #8092AB;">$ 10000.00</s></span>
+                        <p style="color: black; margin-top:10px; font-size: 12px;">1 each</p>
+                        <div class="cardbutton">
+                            <span style="color: black;" class="kaun"><input type="number" id="quantity" name="quantity" min="1" max="5" color="black"></span>
+                            <span style="color: black; margin-left: 8px;" class="atoc"><button class="add">Add to cart</button></span> 
+                        </div>
+
+                    </div>
+                </div>
+                <div class="heartcard">
+                    <span id="hethree"><i class="fa fa-heart-o" onclick="changeHeartColor(this.parentElement.getAttribute('id'))"></i></span>
+                </div>
+            </div>
+            <div class="containerfour">
+                <div class ="img-gallery">
+                    <div>
+                        <img src="images/pngwing 6.png">
+                        <p>...</p>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <span style ="color: orange" class="fa fa-star checked"></span>
+                        <h5 style="color: black; margin-top: 10px;">Carder Mesh Black Fabric Computer</h5>
+                        <p style="font-size: 8px;">...</p>
+                        <span style="color: black; font-size: 16px">$ 8000.00</span><span style="color: #8092AB; margin-left:8px; font-size:12px;"><s style="color: #8092AB;">$ 10000.00</s></span>
+                        <p style="color: black; margin-top:10px; font-size: 12px;">1 each</p>
+                        <div class="cardbutton">
+                            <span style="color: black;" class="kaun"><input type="number" id="quantity" name="quantity" min="1" max="5" color="black"></span>
+                            <span style="color: black; margin-left: 8px;" class="atoc"><button class="add">Add to cart</button></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="heartcard">
+                    <span id="hefour"><i class="fa fa-heart-o" onclick="changeHeartColor(this.parentElement.getAttribute('id'))"></i></span>
+                </div>
+            </div>
+        </div>
+     </body>
     </div>
-    <div class="right dflex">
-      <div class="item">
-        <i style="font-size:24px" class="fa">&#xf004;</i>      
-      </div>
-
-      <div class="item">
-        <p>Wishlist</p>
-      </div>
-
-      <div class="item">
-        <i class="fa fa-shopping-cart fa-2x"></i></div>
-    <p>My cart</p>
-    </div>
-
-  </nav>
-
-   <!-- ------------------------------------------------------------- -->
-
-  <nav class="subnavigation">
-    <ul class="submenu">
-      <!-- <a href="#"><i class="fa fa-bars"></i>
-        <li>All</li>
-      </a> -->
-      <a href="#">
-        <li>Gift Cards</li>
-      </a> -->
-      <a href="#">
-        <li>Amazon Pay</li>
-      </a>
-      <a href="#">
-        <li>Amazon Business <i class="fa fa-sort-desc"></i></li>
-      </a>
-      <a href="#">
-        <li>Pet Supplies</li>
-      </a>
-      <a href="#">
-        <li>Kindle ebooks</li>
-      </a>
-      <a href="#">
-        <li>User's Amazon.in</li>
-      </a>
-      <a href="#">
-        <li>Gift ideas</li>
-      </a>
-      <a href="#">
-        <li>Video Games</li>
-      </a>
-      <a href="#">
-        <li>AmazonBasics</li>
-      </a>
-      <a href="#">
-        <li>Copuons</li>
-      </a>
-    </ul>
-    <!-- <ul>
-      <a href="#"><i class="fa fa-amazon bg"></i>
-        <li class="li">Shopping made easy|Download the app</li>
-      </a> -->
-    <!-- </ul> -->
-  </nav> -->
-<!-- <ul>
-    <li>Electronics</li>
-    <li>Electronics</li>
-    <li>Electronics</li>
-    <li>Electronics</li>
-    <li>Electronics</li>
-    <li>Electronics</li>
-    <li>Electronics</li>
-    <li>Electronics</li>
-</ul> -->
-
-
-
-
-  <section></section>
-</body>
-
-</html>
